@@ -3,11 +3,19 @@ package com.example.keith.a1_app;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Random;
 
+public class MainActivity extends AppCompatActivity implements Animation.AnimationListener {
+
+    // Animation
+    Animation animRotate1;
+
+    //UI widgets
     TextView    mtv;
     Button      myButton2;
 
@@ -28,9 +36,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // load the animation
+        animRotate1 = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.rotate1);
+
+        animRotate1.setAnimationListener(this);
+
+
     }
 
     public void doButton1(View view) {
         mtv.setText(R.string.text_b1);
+
+        myButton2.startAnimation(animRotate1);
+    }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
     }
 }
