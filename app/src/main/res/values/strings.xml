@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">1_App</string>
+    <string name="text1">Default Text</string>
+    <string name="text_b1">Clicked by Button1</string>
+    <string name="text_b2">Clicked by Button2</string>
+    <string name="but1">Button 1</string>
+    <string name="but2">Button 2</string>
 </resources>
