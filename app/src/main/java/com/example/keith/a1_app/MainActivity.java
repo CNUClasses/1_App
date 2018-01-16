@@ -2,6 +2,7 @@ package com.example.keith.a1_app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +13,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements Animation.AnimationListener {
 
+    private static final String TAG = "1_IntroApp" ;
     // Animation
     Animation animRotate1;
 
@@ -41,13 +43,12 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                 R.anim.rotate1);
 
         animRotate1.setAnimationListener(this);
-
-
+        Log.d(TAG, "onCreate: ");
     }
 
     public void doButton1(View view) {
         mtv.setText(R.string.text_b1);
-
+        Log.d(TAG, "doButton1: logcat tag");
         myButton2.startAnimation(animRotate1);
     }
 
